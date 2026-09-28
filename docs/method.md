@@ -279,8 +279,9 @@ COC_{h,p,i}=(1-f_i)\,\frac{44/12}{A}\,\Delta C_{p,i}
 \;+\;f_i\left[\frac{44/12}{A}\left(C^{np}_{i}-C^{ap}_{p,i}\right)+EF_i\right]
 $$
 
-where $EF_i$ is the cell's drainage emission factor in tCO2e/ha/year. The flux is not divided by $A$,
-because it is already annual. Because the soil pair is dropped rather than kept alongside the flux, the same
+where $EF_i$ is the cell's drainage emission factor in tCO2e/ha/year (on-site CO2 plus N2O, from the
+WRI/GFW model). It is already expressed as CO2 equivalent and is already annual, so it takes neither the
+44/12 conversion nor the division by $A$. Because the soil pair is dropped rather than kept alongside the flux, the same
 carbon is never counted twice; on the cells where every cropped hectare is drained peat, the result equals
 the plant term plus the emission factor exactly, for every crop.
 

@@ -14,9 +14,9 @@ flux, while the plant term is kept. For a cell whose share of cropped area on dr
 
     COCh = (1 - f) x (44/12) x dC / A   +   f x ((44/12) x (native plant - ag plant) / A + EF)
 
-The flux EF is already annual (tCO2e/ha/yr), so it is not divided by A. Dropping the soil pair on the peat
-share, rather than adding the flux on top, is what prevents counting peat carbon twice: the measured soil
-layer already contains it.
+The flux EF is already annual and already CO2 equivalent (tCO2e/ha/yr), so it is neither divided by A
+nor converted by 44/12. Dropping the soil pair on the peat share, rather than adding the flux on top, is
+what prevents counting peat carbon twice: the measured soil layer already contains it.
 
 f is the drained agricultural organic-soil area (GFW) as a share of the cell's CROP area, capped at 1,
 not of its whole area. GFW's layer is already restricted to cropland and plantations, so dividing by cell
