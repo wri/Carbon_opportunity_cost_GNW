@@ -50,7 +50,27 @@ from coc.constants import (ANNUALIZATION_YEARS, CO2_PER_C, IPCC_RUBBER_AGB_TC_HA
                            YIELD_KG_TO_T)
 from coc.grid import TH, TW, cell_area_ha, rd, save
 
-METHOD = "v7.3"      # the method version, as named in the development work and the method write-up
+METHOD = "v7.3"      # the method version, as named in the development work and docs/method.md
+
+# Which layer feeds which part of the model: written into results/run.json, so a result names its inputs.
+INPUTS = {
+    "native_plant": {"layer": "harmonized/native_plant_carbon_tc_ha.tif",
+                     "source": "Erb et al. 2018, mean of Extended Data Fig. 4 maps A-E"},
+    "native_soil": {"layer": "harmonized/native_soil_a9_reverse/native_soil_{annual,perennial}_tc_ha.tif",
+                    "source": "COC tool Table A-9 run backwards on OpenLandMap 0-100 cm SOC, by Dinerstein 2017 biome"},
+    "ag_plant": {"layer": "harmonized/ag_plant_cornell/<CROP>_ag_plant_tc_ha.tif, falling back to "
+                          "harmonized/ag_plant_tool/<item>_ag_plant_tc_ha.tif",
+                 "source": "Cao et al. 2026 (29 crops); IPCC 2019 Table 5.3 for rubber (40.1 tC/ha); "
+                           "COC tool col F / Table A-8 otherwise"},
+    "ag_soil": {"layer": "harmonized/soc_openlandmap_0-100cm_tc_ha.tif",
+                "source": "OpenLandMap-soildb socd, mean, 2015-2020, 0-100 cm"},
+    "crop_area_yield": {"layer": "harmonized/mapspam/<CROP>_{physical_area_ha,harvested_area_ha,yield_kg_ha}.tif",
+                        "source": "MapSPAM 2020 V2r2, all production systems (_A layers)"},
+    "organic_soils": {"layer": "harmonized/gfw_peat/gfw_peat_ag_{frac,ef_tco2e_ha_yr}.tif",
+                      "source": "WRI/GFW AFOLU organic-soils model v1.0.1, 2016-2020, agricultural classes, "
+                                "on-site CO2 + N2O"},
+    "annualization_years": ANNUALIZATION_YEARS,
+}
 
 
 def load_concordance():
@@ -251,7 +271,7 @@ def run(out=None, verbose=True):
     pd.DataFrame([summary]).to_csv(out / "qc" / "coc_coverage.csv", index=False)
     (out / "run.json").write_text(json.dumps(
         {"created": _dt.datetime.now().isoformat(timespec="seconds"), "data_root": str(paths.DATA_ROOT),
-         "results": summary}, indent=2), encoding="utf-8")
+         "inputs": INPUTS, "results": summary}, indent=2), encoding="utf-8")
     if verbose:
         print(f"total {T_gt:.3f} GtCO2e/yr | {summary['valid_cells']:,} cells | "
               f"{per_tonne:.3f} tCO2e/t | {tot_peat / 1e6:.2f} Mha costed as drained peat -> {out}")
