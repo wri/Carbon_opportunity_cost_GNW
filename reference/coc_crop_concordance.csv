@@ -1,0 +1,47 @@
+spam_code,spam_name,native_soil,ag_plant,status,note
+BANA,Banana,banana,banana,ok,
+BARL,Barley,barley,barley,ok,
+BEAN,Bean,common_bean,common_beans,ok,
+CASS,Cassava,cassava,cassava,ok,
+CHIC,Chickpea,chickpea,chickpeas,ok,
+CITR,Citrus,orange,orange,JUDGMENT,citrus->A-7 Orange
+CNUT,Coconut,coconut_palm,coconut,ok,
+COCO,Cocoa,cocoa,cocoa,ok,
+COFF,Arabica Coffee,coffee,coffee,ok,arabica
+COTT,Cotton,seed_cotton,seed_cotton,ok,
+COWP,Cowpea,cowpea,cow_peas,ok,
+GROU,Groundnut,peanut,peanut_pods,ok,groundnut=peanut
+LENT,Lentil,lentil,lentils,ok,
+MAIZ,Maize,maize,maize,ok,
+MILL,Small Millet,millet,millet,ok,A-7 lumps both millets
+OCER,Other Cereals,cereals_other,other_cereals,ok,"""other cereals"""
+OFIB,Other Fibre,seed_cotton,seed_cotton,ADDED,user: Seed cotton (A-7) for both native-soil & ag-plant
+OILP,Oilpalm,oil_palm,oil_palm,ok,
+ONIO,Onion,below_ground,onion,JUDGMENT,veg below-ground
+OOIL,Other Oil Crops,oil_and_protein_field_crops_other,other_oil_prot_field_crops,ok,"""other oil crops"""
+OPUL,Other Pulses,oil_and_protein_field_crops_other,peas,WEAK,"other pulses: A-7 ""Other"" oil&prot / ag peas proxy"
+ORTS,Other Roots,starchy_root_crops,other_below_ground_vegetables,WEAK,other roots: A-7 root group / ag below-ground veg proxy
+PIGE,Pigeon Pea,pigeon_pea,pigeon_peas,ok,
+PLNT,Plantain,plantain,plantain,ok,
+PMIL,Pearl Millet,millet,millet,ok,A-7 lumps both millets
+POTA,Potato,white_potato,white_potato,ok,
+RAPE,Rapeseed,rapeseed,rapeseed,ok,
+RCOF,Robusta Coffee,coffee,coffee,ok,robusta
+REST,Rest of Crops,all_cropland,__cropland_mean__,ADDED,user: All cropland (A-7); ag-plant = cropland-mean proxy
+RICE,Rice,rice_irrigated_high_input;rice_low_input,rice_unprocessed,JUDGMENT,avg the 2 A-7 rice rows
+RUBB,Rubber,all_cropland,__cropland_mean__,ADDED,user: All cropland (A-7); ag-plant proxy — RUBBER tree biomass likely underestimated
+SESA,Sesame,sesame,sesame,ok,
+SORG,Sorghum,sorghum,sorghum,ok,
+SOYB,Soybean,soybean,soybean,ok,
+SUGB,Sugarbeet,sugar_beet,sugarbeet,ok,
+SUGC,Sugarcane,sugar_cane,sugarcane,ok,
+SUNF,Sunflower,sunflower,sunflower,ok,
+SWPO,Sweet Potato,sweet_potato,sweet_potato,ok,
+TEAS,Tea,tea,tea,ok,
+TEMF,Temperate Fruit,other_temperate,other_temperate_fruits,JUDGMENT,temperate fruit->A-7 Other-Temperate. KNOWN UNDERSTATEMENT: SPAM TEMF is ALL temperate fruit (incl. Apples and Grapes) but the tool's 'Other temperate fruits' excludes both. Correct value would blend Apple 9.31 + Grape 9.99 + Other-Temperate 6.81 by area share; weights need FAOSTAT. See HANDOFF.
+TOBA,Tobacco,all_cropland,__cropland_mean__,ADDED,user: All cropland (A-7); ag-plant = cropland-mean proxy
+TOMA,Tomato,above_ground,tomato,JUDGMENT,veg above-ground
+TROF,Tropical Fruit,other_tropical,other_tropical_fruits,JUDGMENT,"tropical fruit->A-7 Other-Tropical. KNOWN UNDERSTATEMENT: SPAM TROF ('Other Tropical Fruit', excl. citrus/banana/plantain) still INCLUDES mango, but the tool's 'Other tropical fruits' excludes it. Correct value would blend Mango 19.95 + Other-Tropical 7.57 by area share; weights need FAOSTAT. See HANDOFF."
+VEGE,Other Vegetables,above_ground,other_above_ground_vegetables,JUDGMENT,veg above-ground
+WHEA,Wheat,wheat,wheat,ok,
+YAMS,Yams,yams,yams,ok,

@@ -1,0 +1,11 @@
+# Where the data lives. A relative path resolves against this file's folder.
+# Override it without editing this file: set COC_DATA_ROOT, or put `data_root = "..."` in an untracked
+# config.local.toml beside this one.
+#
+# Layout under data_root (mirrors the S3 release):
+#   raw/          source datasets, as downloaded                       (needed only to rebuild harmonized/)
+#   harmonized/   every input layer on the MapSPAM 5 arc-min grid       (all the calculation reads)
+#   results/      the carbon opportunity cost rasters and tables
+data_root = "data"
+
+release = "v1.0.0"

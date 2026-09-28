@@ -1,0 +1,27 @@
+# Data never goes in git: it is published on S3 (see README) and lives under data_root.
+*.tif
+*.tiff
+*.zip
+*.gpkg
+*.shp
+*.shx
+*.dbf
+*.prj
+*.qpj
+*.xlsx
+data/
+results/
+
+# Environments and caches
+.venv/
+venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Local tool settings and OS files
+config.local.toml
+.claude/
+.env
+.DS_Store
+~$*
